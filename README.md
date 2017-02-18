@@ -2,6 +2,12 @@
 
 > a sell peoject
 
+Vue2.0;
+vue-router;
+vue-resource;
+
+es6;
+
 ## Build Setup
 
 ``` bash
