@@ -14,7 +14,9 @@
           <span>另需配送费4元</span>
         </div>
       </div>
-      <div class="shopcart-right"></div>
+      <div class="shopcart-right">
+        <span>20起送</span>
+      </div>
     </div>
   </div>
 </template>
@@ -94,6 +96,13 @@
       .shopcart-right{
         flex: 0 0 105px;
         width: 105px;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        background-color: #7e8c8d;
+        span{
+          line-height: 56px;
+        }
       }
     }
   }
