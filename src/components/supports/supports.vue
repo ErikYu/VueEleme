@@ -14,11 +14,11 @@
         </div>
         <div class="supports">
             <ul class="">
-              <li v-if="seller.supports"><span>{{ seller.supports[0].description }}</span></li>
-              <li v-if="seller.supports"><span>{{ seller.supports[1].description }}</span></li>
-              <li v-if="seller.supports"><span>{{ seller.supports[2].description }}</span></li>
-              <li v-if="seller.supports"><span>{{ seller.supports[3].description }}</span></li>
-              <li v-if="seller.supports"><span>{{ seller.supports[4].description }}</span></li>
+              <!--<li v-if="seller.supports" v-for="(item,index) in seller.supports">-->
+                <!--<span v-if="classMap" class="icon" :class="classMap[seller.supports[index].type]"></span>-->
+                <!--<span>{{ seller.supports[index].description }}</span>-->
+              <!--</li>-->
+              <discount-li :classMap="classMap" :info="seller.supports"></discount-li>
             </ul>
         </div>
         <div class="supports-header">
@@ -39,6 +39,7 @@
 
 <script type="text/ecmascript-6">
   import ratingstar from '../ratingstar/ratingstar.vue';
+  import discount from '../discount/discount.vue';
   export default {
     data () {
       return {
@@ -51,7 +52,11 @@
       }
     },
     components: {
-        'rating-star': ratingstar
+      'rating-star': ratingstar,
+      'discount-li': discount
+    },
+    created () {
+      this.classMap = ['icon-decrease', 'icon-discount', 'icon-guarantee', 'icon-invoice', 'icon-special'];
     },
     props: {
       seller: {

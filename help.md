@@ -31,6 +31,12 @@ app.get('/', function(req, res) {
 |res.json()|发送一个json格式的相应|
 
 ## vue-resource应用
+````javascript
+this.$http.get('/api/seller').then((response) => {
+  response = response.body;
+  ...
+})
+````
 
 ## css-sticky布局
 #### 布局思路
@@ -157,3 +163,14 @@ app.get('/', function(req, res) {
 ````
 优先使用这个属性，单独写浏览器会推算相关值
 6. align-self：允许单个项目可以有跟其他项目不一样的对齐方式；继承于父元素的align-items属性
+
+## 垂直居中
+````css
+.parent{
+  display: table
+}
+.child{
+  display: table-cell;
+  vertical-align: middle;
+}
+````

@@ -9,7 +9,9 @@
       </ul>
     </nav>
     <router-view></router-view>
-    <v-supports v-if="isShow" :seller="seller" v-on:hidesupport="hide"></v-supports>
+    <transition name="fade">
+      <v-supports v-if="isShow" :seller="seller" v-on:hidesupport="hide"></v-supports>
+    </transition>
   </div>
 </template>
 
@@ -59,6 +61,7 @@ export default {
       ul{
         display: flex;
         height: 40px;
+        box-sizing: border-box;
         .line-bottom;
         li{
           display: inline-block;
@@ -79,6 +82,12 @@ export default {
       }
     }
   }
-
+  /*渐变效果*/
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
+  }
 
 </style>
